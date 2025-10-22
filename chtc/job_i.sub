@@ -1,5 +1,4 @@
 universe = vanilla
-executable = job_gpu_i.sh
 
 request_cpus = 1
 request_memory = 50GB
