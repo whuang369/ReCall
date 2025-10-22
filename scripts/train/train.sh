@@ -1,3 +1,6 @@
+CHECKPOINT_SAVE=${SAVE_PATH:-"./checkpoints"}
+mkdir -p "$CHECKPOINT_SAVE"
+
 PROMPT_KEY=question
 TRAIN_BATCH_SIZE=256
 PPO_MINI_BATCH_SIZE=64
@@ -18,7 +21,7 @@ SANDBOX_URL=/your/sandbox/url
 PROJECT_NAME=project-name-on-wandb
 EXPERIMENT_NAME=experiment-name-on-wandb
 NNODES=1
-N_GPUS_PER_NODE=8
+N_GPUS_PER_NODE=1
 SAVE_FREQ=10
 TEST_FREQ=10
 TOTAL_EPOCHS=2
@@ -126,4 +129,4 @@ python3 -m verl.trainer.main_ppo \
     trainer.default_hdfs_dir=null \
     trainer.default_local_dir=${SAVE_PATH} \
     trainer.rollout_save_path=${ROLLOUT_SAVE_PATH} \
-    hydra.run.dir=$CHECKPOINT_SAVE/outputs | tee $CHECKPOINT_SAVE/run.log
+    hydra.run.dir=${CHECKPOINT_SAVE}/outputs | tee ${CHECKPOINT_SAVE}/run.log
