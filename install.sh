@@ -28,7 +28,7 @@ bash train.sh \
     --save_freq 5 \
     --test_freq 5 \
     --total_epochs 2 \
-    --wandb_api_key d0dbec0b8f79cdb57ef36ae46bb16a336954b2ca \
+    --wandb_api_key  \
     --save_path ../../outputs/recall_qwen1p5b_ins \
     --train_files "['../../data/agentrl__ReCall-data/train.parquet']" \
     --test_files "['../../data/agentrl__ReCall-data/validation.parquet']"

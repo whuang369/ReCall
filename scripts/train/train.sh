@@ -1,6 +1,3 @@
-CHECKPOINT_SAVE=${SAVE_PATH:-"./checkpoints"}
-mkdir -p "$CHECKPOINT_SAVE"
-
 PROMPT_KEY=question
 TRAIN_BATCH_SIZE=256
 PPO_MINI_BATCH_SIZE=64
@@ -129,4 +126,4 @@ python3 -m verl.trainer.main_ppo \
     trainer.default_hdfs_dir=null \
     trainer.default_local_dir=${SAVE_PATH} \
     trainer.rollout_save_path=${ROLLOUT_SAVE_PATH} \
-    hydra.run.dir=${CHECKPOINT_SAVE}/outputs | tee ${CHECKPOINT_SAVE}/run.log
+    hydra.run.dir=${SAVE_PATH}/outputs | tee ${SAVE_PATH}/run.log
